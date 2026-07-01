@@ -1,0 +1,28 @@
+{
+  "name": "cse341-project-01",
+  "version": "1.0.0",
+  "description": "CSE341 project 1 (W01-W02)",
+  "homepage": "https://github.com/SchoolTechBytes/cse341-project-01#readme",
+  "bugs": {
+    "url": "https://github.com/SchoolTechBytes/cse341-project-01/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchoolTechBytes/cse341-project-01.git"
+  },
+  "license": "ISC",
+  "author": "Nicholas Nixon",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
