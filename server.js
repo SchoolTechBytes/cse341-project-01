@@ -2,6 +2,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import router from './src/routes.js';
+import { initDb } from './src/data/database.js';
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const PORT = process.env.PORT || 3000;
@@ -25,8 +26,15 @@ app.set('views', path.join(__dirname, 'src/views'));
   */
 app.use(router);
 
-
-app.listen(PORT, () => {
-    console.log(`Server is running at http://127.0.0.1:${PORT}`);
-    console.log(`Environment: ${NODE_ENV}`);
-});
+initDb((err) => {
+  if (err) {
+    console.log(err);
+  }
+  else {
+    app.listen(PORT, () => {
+      console.log(`Server is running at http://127.0.0.1:${PORT}`);
+      console.log(`Environment: ${NODE_ENV}`);
+      console.log('Database is connected!')
+    })
+  }
+})
