@@ -1,0 +1,7 @@
+### Get all users
+GET https://cse341-project-01-y1yj.onrender.com/contacts
+Content-Type: application/json
+
+
+### Get one user
+GET https://cse341-project-01-y1yj.onrender.com/contacts/6a47d3f729b5855bd6bb85b3
