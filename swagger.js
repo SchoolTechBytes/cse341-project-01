@@ -5,7 +5,8 @@ const doc = {
         title: 'Contact API',
         description: 'This API is for CSE341 learning project'
     },
-    host: 'cse341-project-01-y1yj.onrender.com'
+    host: 'cse341-project-01-y1yj.onrender.com',
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';
