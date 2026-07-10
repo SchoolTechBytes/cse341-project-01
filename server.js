@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import router from './src/routes.js';
 import { initDb } from './src/data/database.js';
+import bodyParser from 'body-parser';
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,8 @@ app.set('view engine', 'ejs');
 
 // Tell Express where to find your templates
 app.set('views', path.join(__dirname, 'src/views'));
+
+app.use(bodyParser.json());
 
 /**
   * Routes
