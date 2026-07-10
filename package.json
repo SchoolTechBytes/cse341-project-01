@@ -16,15 +16,18 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon",
-    "start": "node server.js"
+    "start": "node server.js",
+    "swagger": "node ./swagger.js"
   },
   "dependencies": {
     "body-parser": "^2.3.0",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
-    "mongodb": "^7.4.0"
+    "mongodb": "^7.4.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "swagger-autogen": "^2.23.7"
   }
 }

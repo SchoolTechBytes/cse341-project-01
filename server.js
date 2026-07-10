@@ -4,6 +4,8 @@ import path from 'path';
 import router from './src/routes.js';
 import { initDb } from './src/data/database.js';
 import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.json' with { type: 'json' };
 
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
 const PORT = process.env.PORT || 3000;
@@ -11,6 +13,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+var options = {
+  explorer: true
+};
 
 /**
  * Configure Express middleware
@@ -27,6 +33,7 @@ app.use(bodyParser.json());
 /**
   * Routes
   */
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 app.use(router);
 
 initDb((err) => {
