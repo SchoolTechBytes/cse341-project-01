@@ -1,5 +1,5 @@
 ### Get all users
-GET https://cse341-project-01-y1yj.onrender.com/contacts
+GET http://cse341-project-01-y1yj.onrender.com/contacts
 Content-Type: application/json
 
 
